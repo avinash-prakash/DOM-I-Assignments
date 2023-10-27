@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <button id="showButton">Show Quote in console</button>
+  <p id="quote">Talk is cheap. Show me the code.</p>
+
+  <script>
+    // Get the button and the quote element by their respective IDs
+    var button = document.getElementById("showButton");
+    var quoteElement = document.getElementById("quote");
+
+    // Add a click event listener to the button
+    button.addEventListener("click", function() {
+      // Get the text content of the quote element
+      var quoteText = quoteElement.textContent;
+
+      // Log the quote text to the console
+      console.log(quoteText);
+    });
+  </script>
+</body>
+</html>

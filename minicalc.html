@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <style>
+    .input-container {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .calculator-buttons button {
+      margin-top: 15px;
+      margin-right: 15px;
+      margin-left: 15px
+    }
+  </style>
+</head>
+<body>
+  <h1>Mini Calculator</h1>
+  <div class="input-container">
+    <input type="number" id="num1" placeholder="Enter 1st number">
+  </div>
+  <div class="input-container">
+    <input type="number" id="num2" placeholder="Enter 2nd number">
+  </div>
+  <br>
+  <div class="calculator-buttons">
+  <button onclick="performOperation('add')">Add</button>
+  <button onclick="performOperation('subtract')">Subtract</button>
+  <button onclick="performOperation('divide')">Divide</button>
+  <button onclick="performOperation('multiply')">Multiply</button>
+  </div>
+
+  <script>
+    function performOperation(operation) {
+     
+      var num1 = parseFloat(document.getElementById("num1").value) || 0;
+      var num2 = parseFloat(document.getElementById("num2").value) || 0; 
+      var result;
+
+      
+      if (operation === 'add') {
+        result = num1 + num2;
+      } else if (operation === 'subtract') {
+        result = num1 - num2;
+      } else if (operation === 'divide') {
+        if (num2 !== 0) {
+          result = num1 / num2;
+        } else {
+          alert("Error: Division by zero is not allowed.");
+          return;
+        }
+      } else if (operation === 'multiply') {
+        result = num1 * num2;
+      }
+
+     
+      alert("Result: " + result);
+    }
+  </script>
+</body>
+</html>
+
